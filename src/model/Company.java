@@ -14,13 +14,13 @@ public abstract class Company{
 	
 	//constants
 	
-	public String MANUFACTURING = "Manufacturera";
-	public String EDUCATION = "Educacion";
-	public String TECNOLOGY = "Tecnologia";
-	public String DRUG = "Medicamentos";
-	public String FOOD = "Alimentos";
-	public String PUBLIC_SERVICE = "Servicios publicos";
-	public int CUBICLES = 20;
+	public final static String MANUFACTURING = "Manufacturera";
+	public final static String EDUCATION = "Educacion";
+	public final static String TECNOLOGY = "Tecnologia";
+	public final static String DRUG = "Medicamentos";
+	public final static String FOOD = "Alimentos";
+	public final static String PUBLIC_SERVICE = "Servicios publicos";
+	public final static int CUBICLES = 20;
 	
 	//attributes
 	

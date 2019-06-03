@@ -12,10 +12,10 @@ public class PublicService extends Service{
 
 	//constants
 	
-	public char SEWERAGE = 's';
-	public char ENERGY = 'e';
-	public char AQUEDUCT = 'a';
-	public int PROCULTURE_BASE = 40;
+	public final static char SEWERAGE = 's';
+	public final static char ENERGY = 'e';
+	public final static char AQUEDUCT = 'a';
+	public final static int PROCULTURE_BASE = 40;
 	
 	//attributes
 	
