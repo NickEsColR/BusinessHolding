@@ -22,5 +22,15 @@ public class Holding{
 		bussiness = new ArrayList<Company>();
 	}
 	
-	public void addBussiness()
+	public void addBussiness(Company c){
+		bussiness.add(c)
+	}
+	
+	public ArrayList<Company> getBussiness(){
+		return bussiness;
+	}
+	
+	public String proCultureIvaEducation(){
+		
+	}
 }
