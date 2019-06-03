@@ -10,7 +10,7 @@ package model;
 
 java.util.ArrayList;
 
-public class Company{
+public abstract class Company{
 	
 	//constants
 	
