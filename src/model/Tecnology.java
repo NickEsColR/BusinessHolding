@@ -8,6 +8,8 @@ package model;
 * 01/06/2019
 */
 
+import java.util.ArrayList;
+
 public class Tecnology extends Service{
 
 	//constants
@@ -27,10 +29,10 @@ public class Tecnology extends Service{
 	//methods
 	
 	public Tecnology(String name, String nit, String address, String phone, int employ, 
-	double price, int[] bornDate, String type, String agent, int floor, double satisfaction
+	double price, int[] bornDate, String type, String agent, int floor, double satisfaction,
 	ArrayList<String> s, double energy){
 		super( name,  nit,  address,  phone,  employ,  price,  bornDate,  type,  agent,  floor,  satisfaction);
-		services = new ArrayList<String>();
+
 		services = s;
 		this.energy = energy;
 	}
@@ -54,6 +56,6 @@ public class Tecnology extends Service{
 		else{
 			tree += 500;
 		}
-		return tree:
+		return tree;
 	}
 }

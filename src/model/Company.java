@@ -8,7 +8,7 @@ package model;
 * 01/06/2019
 */
 
-java.util.ArrayList;
+import java.util.ArrayList;
 
 public abstract class Company{
 	
@@ -38,6 +38,7 @@ public abstract class Company{
 	//relations
 	
 	private Cubicle[][] building;
+	
 	//methods
 	
 	public Company(String name, String nit, String address, String phone, int employ, 
@@ -95,95 +96,174 @@ public abstract class Company{
 	}
 	
 	public String searchEmploy(String employName, char type){
-		String employExtension = "no se encontro el empleado";
+		String employExtension = "La extension del empleado es: ";
 		boolean find = false;
+		int column = 0;
 		if(type == 'l'){
 			for(int i = 0;i < building.length && !find;i++){
 				if(findEmploy(employName,i,0)){
-					employExtension = building[i][0].getEmployExtension();
+					employExtension += building[i][0].getEmployExtension();
 					find = true;
 				}
-				else if(i == building.lenght-1){
+				else if(i == floor-1){
 					for(int j = 0;j < building[i].length && !find;j++){
 						if(findEmploy(employName,i,j)){
-							employExtension = building[i][j].getEmployExtension();
+							employExtension += building[i][j].getEmployExtension();
 							find = true;
 						}
 					}
 				}
 			}
 		}
-		if(type == 'z'){
-			for(int i = 0;i < building[0].lenght && !find;i++){
-				if(findEmploy(employName,0,i)){
-					employExtension = building[0][i];
-					find = true;
-				}
-				else if(  findEmploy(employName,building.lenght-1,i)){
-					employExtension = building[lenght-1][i];
-					find = true;
-				}
-				else if(i == building[0].lenght-1){
-					int z = building.lenght-1;
-					while(i => 0;)
+		else if(type == 'z'){
+			int i = 0;
+			Cubicle[][] cuadrada = new Cubicle[floor][floor];
+			for( ;i < floor ;i++){
+				
+				cuadrada[i][column] = building[i][column];
+				if(i == floor-1 && column != floor-1){
+					i = 0;
+					column++;
 				}
 			}
+			int z = floor-1;
+			for(int j = 0;j < cuadrada.length && !find;j++){
+				if(findEmploy(employName,0,j)){
+					employExtension += building[0][i];
+					find = true;
+				}
+				else if( findEmploy(employName,z,j)){
+					employExtension += building[floor-1][i];
+					find = true;
+				}
+				else if(  findEmploy(employName,floor-1,j)){
+					employExtension += building[floor-1][i];
+					find = true;
+				}
+				z--;
+			}
 		}
-		if(type == 'x'){
+		else if(type == 'x'){
 			int x = 0;
-			for(int i = 0;i < building.lenght && !find;i++){
+			for(int i = 0;i < floor && !find;i++){
 				if(findEmploy(employName,i,x)){
-					employExtension = building[i][x].getEmployExtension();
+					employExtension += building[i][x].getEmployExtension();
 					find = true;
 				}
 				x++;
 			}
 			x--;
-			for(int j = 0;j < building.lenght && !find;j++){
+			for(int j = 0;j < floor && !find;j++){
 				if(findEmploy(employName,j,x)){
-					employExtension = building[j][x].getEmployExtension();
+					employExtension += building[j][x].getEmployExtension();
 					find = true;
 				}
 				x--;
 			}
 		}
-		if(type == 'o'){
+		else if(type == 'o'){
 			for(int i = 0;i < CUBICLES && !find;i++){
 				if(findEmploy(employName,0,i)){
-					employExtension = building[0][i].getEmployExtension();
+					employExtension += building[0][i].getEmployExtension();
 					find = true;
 				}
 				else if(findEmploy(employName,floor-1,i)){
-					employExtension = building[floor-1][i].getEmployExtension();
+					employExtension += building[floor-1][i].getEmployExtension();
 					find = true;
 				}
-				else if(i < building.lenght){
+				else if(i < floor){
 					if(findEmploy(employName,i,0)){
-						employExtension = building[i][0].getEmployExtension();
+						employExtension += building[i][0].getEmployExtension();
 						find = true;
 					}
 					else if(findEmploy(employName,i,CUBICLES-1)){
-						employExtension = building[i][CUBICLES-1].getEmployExtension();
+						employExtension += building[i][CUBICLES-1].getEmployExtension();
 						find = true;
 					}
 				}
 					
 			}
 		}
-		if(type == 'e'){
-			
+		else if(type == 'e'){
+			if(floor % 2 != 0){
+				int down = floor-1;
+				int up = 0;
+				while(up != down){
+					up++;
+					down--;
+				}
+				for(int i = 0;i < CUBICLES;i++){
+					if(findEmploy(employName,0,i)){
+						employExtension += building[0][i].getEmployExtension();
+						find = true;
+					}
+					else if(findEmploy(employName,floor-1,i)){
+						employExtension += building[floor-1][i].getEmployExtension();
+						find = true;
+					}
+					else if(findEmploy(employName,i,0)){
+						employExtension += building[i][0].getEmployExtension();
+						find = true;
+					}
+					else if(findEmploy(employName,up,i)){
+						employExtension += building[up][i].getEmployExtension();
+						find = true;
+					}
+				}
+			}
+		}
+		if(!find){
+			employExtension = "No se encontro al empleado";
 		}
 		return employExtension;
 	}
 	
-	public ArrayList<String> searchEmployEmail(){
+	public ArrayList<String> searchEmployEmail(String employPosition){
 		ArrayList<String> emails = new ArrayList<String>();
-		boolean find = false;
 		int spiral = 0;
-		for(int i = 0;i < CUBICLES && !find;i++){
-			if(i < floor){
+		int limitFloorU = 0;
+		int limitFloorD = floor;
+		int limitCubicleR = CUBICLES;
+		int limitCubicleL = 0;
+		int j = 0;
+		
+		for(int i = 0;i < limitFloorD;i++){
+			if(findEmploy(employPosition,i,0)){
+						emails.add(building[i][spiral].getEmployEmail()) ;
+			}
+			if(i == floor-1){
+				for(;j < limitCubicleR;j++){
+					if(findEmploy(employPosition,i,j)){
+						emails.add(building[i][j].getEmployEmail());
+					}
+				}
+			}
+			if(j == limitCubicleR){
+				j--;
+				for( ;i >= limitFloorU;i--){
+					if(findEmploy(employPosition,i,j)){
+						emails.add(building[i][j].getEmployEmail());
+					}
+				}
+			}
+			if(i == limitFloorU-1){
+				i++;
+				for( ;j >= limitCubicleL;j--){
+					if(findEmploy(employPosition,i,j)){
+						emails.add(building[i][j].getEmployEmail());
+					}
+				}
+			}
+			if(j == limitCubicleL-1){
+				j+= 2;
+				i++;
+				limitFloorU++;
+				limitFloorD--;
+				limitCubicleR--;
+				limitCubicleL++;
 				
 			}
+			
 		}
 		return emails;
 	}

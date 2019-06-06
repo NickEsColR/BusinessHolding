@@ -19,22 +19,22 @@ public class PublicService extends Service{
 	
 	//attributes
 	
-	private char type;
+	private char typePS;
 	private int suscriptors;
 	private int suscriptors1And2;
 	
 	//methods
 	
 	public PublicService(String name, String nit, String address, String phone, int employ, 
-	double price, int[] bornDate, String type, String agent, int floor, double satisfaction, char type, int s, int s12){
+	double price, int[] bornDate, String type, String agent, int floor, double satisfaction, char typePS, int s, int s12){
 		super( name,  nit,  address,  phone,  employ,  price,  bornDate,  type,  agent,  floor,  satisfaction);
-		this.type = type;
+		this.typePS = typePS;
 		suscriptors = s;
 		suscriptors1And2 = s12;
 	}
 	
-	public char getType(){
-		return type;
+	public char getTypePS(){
+		return typePS;
 	}
 	
 	public int getSuscriptors(){

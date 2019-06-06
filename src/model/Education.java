@@ -22,7 +22,7 @@ public class Education extends Service{
 	private int accreditedYears;
 	private int rankingSaber;
 	private String rectorName;
-	private char type;
+	private char typeE;
 	private int students1And2;
 	private int students;
 	
@@ -36,7 +36,7 @@ public class Education extends Service{
 		accreditedYears = years;
 		rankingSaber = ranking;
 		this.rectorName = rectorName;
-		type = typeE;
+		this.typeE = typeE;
 		students1And2 = s12;
 		students = s;
 	}
@@ -57,8 +57,8 @@ public class Education extends Service{
 		return rectorName;
 	}
 	
-	public char getType(){
-		return type;
+	public char getTypeE(){
+		return typeE;
 	}
 	
 	public int getStudents1And2(){

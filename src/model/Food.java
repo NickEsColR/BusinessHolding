@@ -24,7 +24,7 @@ public class Food extends Manufacturing{
 	
 	//methods
 	
-	public Drug(String name, String nit, String address, String phone, int employ, 
+	public Food(String name, String nit, String address, String phone, int employ, 
 	double price, int[] bornDate, String type, String agent, int floor, String sanitary, 
 	boolean validation, int[] expiration, String modality){
 		super( name,  nit,  address,  phone,  employ,  price,  bornDate,  type,  agent,  floor);

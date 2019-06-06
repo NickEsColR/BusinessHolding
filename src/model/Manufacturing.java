@@ -8,11 +8,13 @@ package model;
 * 01/06/2019
 */
 
+import java.util.ArrayList;
+
 public class Manufacturing extends Company{
 
 	//relations
 	
-	private Arraylist<Product> products;
+	private ArrayList<Product> products;
 	
 	//methods
 	
@@ -32,11 +34,11 @@ public class Manufacturing extends Company{
 	
 	public String waterXTree(){
 		String 	tree = "La cantidad de arboles que debe sembrar son: ";
-		int water = 0;
+		double water = 0;
 		for(int i = 0;i < products.size();i++){
 			water = products.get(i).getWater();
 		}
-		if(waater < 140){
+		if(water < 140){
 			tree += 6;
 		}
 		else if(water < 800){
