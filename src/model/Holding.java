@@ -125,4 +125,62 @@ public class Holding{
 		}
 		return email;
 	}
+	
+	public void setSatisfactionService(String nit,int points,int prom){
+		boolean find = false;
+		for(int i = 0;i < bussiness.size() && !find;i++){
+			if(bussiness.get(i).getNit().equals(nit)){
+				if(bussiness.get(i) instanceof Service){
+					Service s = (Service)bussiness.get(i);
+					s.setSatisfaction(points, prom);
+				}
+				find = true;
+			}
+		}
+	}
+	
+	public String quest1Service(String nit){
+		String msg = "";
+		boolean find = false;
+		for(int i = 0;i < bussiness.size() && !find;i++){
+			if(bussiness.get(i).getNit().equals(nit)){
+				if(bussiness.get(i) instanceof Service){
+					Service s = (Service)bussiness.get(i);
+					msg = s.quest1();
+				}
+				find = true;
+			}
+		}
+		return msg;
+	}
+	
+	public String quest2Service(String nit){
+		String msg = "";
+		boolean find = false;
+		for(int i = 0;i < bussiness.size() && !find;i++){
+			if(bussiness.get(i).getNit().equals(nit)){
+				if(bussiness.get(i) instanceof Service){
+					Service s = (Service)bussiness.get(i);
+					msg = s.quest2();
+				}
+				find = true;
+			}
+		}
+		return msg;
+	}
+	
+	public String quest3Service(String nit){
+		String msg = "";
+		boolean find = false;
+		for(int i = 0;i < bussiness.size() && !find;i++){
+			if(bussiness.get(i).getNit().equals(nit)){
+				if(bussiness.get(i) instanceof Service){
+					Service s = (Service)bussiness.get(i);
+					msg = s.quest1();
+				}
+				find = true;
+			}
+		}
+		return msg;
+	}
 }

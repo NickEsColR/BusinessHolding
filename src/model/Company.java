@@ -275,4 +275,9 @@ public abstract class Company{
 		return find;
 	}
 	
+	public String toString(){
+	return "El nombre de la empresa es: "+name+" con codigo nit "+nit+" ubicado en "+address+" y cuyo numero de telefono es "+phone+
+			"que cuenta con un total de "+totalEmploy+" empleados "+"y es una empresa de tipo "+type;
+	}
+	
 }
