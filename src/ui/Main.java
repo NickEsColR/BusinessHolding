@@ -54,16 +54,19 @@ public class Main{
 			board.nextLine();
 			switch(election){
 				case 1:
-					showBussiness();
 					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					showBussiness();
 					nit =  board.nextLine();
 					System.out.println(holding.proCultureIvaEducation(nit));
 				break;
 				case 2:
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					System.out.println("escriba el codigo nit de la empresa de fabricacion que desea conocer la cantidad de arboles a plantar");
+					showBussiness();
+					nit =  board.nextLine();
+					System.out.println(holding.waterXTree(nit));
 				break;
 				case 3:
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					System.out.println("escriba el numero del tipo de empresa que desea añadir");
 				break;
 				case 4:
 					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
