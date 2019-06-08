@@ -12,33 +12,33 @@ public class Cubicle{
 
 	//attributes
 	
-	private String employName;
-	private String employPosition;
-	private String employEmail;
-	private int employExtension;
+	private String name;
+	private String position;
+	private String email;
+	private int extension;
 	
 	//methods
 	
 	public Cubicle(String name, String pos, String email, int ext){
-		employName = name;
-		employPosition = pos;
-		employEmail = email;
-		employExtension = ext;
+		this.name = name;
+		position = pos;
+		this.email = email;
+		extension = ext;
 	}
 	
-	public String getEmployName(){
-		return employName;
+	public String getName(){
+		return name;
 	}
 	
-	public String getEmployPosition(){
-		return employPosition;
+	public String getPosition(){
+		return position;
 	}
 	
-	public String getEmployEmail(){
-		return employEmail;
+	public String getEmail(){
+		return email;
 	}
 	
-	public int getEmployExtension(){
-		return employExtension;
+	public int getExtension(){
+		return extension;
 	}
 }

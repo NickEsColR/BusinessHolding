@@ -14,12 +14,6 @@ public abstract class Company{
 	
 	//constants
 	
-	public final static String MANUFACTURING = "Manufacturera";
-	public final static String EDUCATION = "Educacion";
-	public final static String TECNOLOGY = "Tecnologia";
-	public final static String DRUG = "Medicamentos";
-	public final static String FOOD = "Alimentos";
-	public final static String PUBLIC_SERVICE = "Servicios publicos";
 	public final static int CUBICLES = 20;
 	
 	//attributes
@@ -102,13 +96,13 @@ public abstract class Company{
 		if(type == 'l'){
 			for(int i = 0;i < building.length && !find;i++){
 				if(findEmploy(employName,i,0)){
-					employExtension += building[i][0].getEmployExtension();
+					employExtension += building[i][0].getExtension();
 					find = true;
 				}
 				else if(i == floor-1){
 					for(int j = 0;j < building[i].length && !find;j++){
 						if(findEmploy(employName,i,j)){
-							employExtension += building[i][j].getEmployExtension();
+							employExtension += building[i][j].getExtension();
 							find = true;
 						}
 					}
@@ -129,15 +123,15 @@ public abstract class Company{
 			int z = floor-1;
 			for(int j = 0;j < cuadrada.length && !find;j++){
 				if(findEmploy(employName,0,j)){
-					employExtension += building[0][i];
+					employExtension += building[0][i].getExtension();
 					find = true;
 				}
 				else if( findEmploy(employName,z,j)){
-					employExtension += building[floor-1][i];
+					employExtension += building[floor-1][i].getExtension();
 					find = true;
 				}
 				else if(  findEmploy(employName,floor-1,j)){
-					employExtension += building[floor-1][i];
+					employExtension += building[floor-1][i].getExtension();
 					find = true;
 				}
 				z--;
@@ -147,7 +141,7 @@ public abstract class Company{
 			int x = 0;
 			for(int i = 0;i < floor && !find;i++){
 				if(findEmploy(employName,i,x)){
-					employExtension += building[i][x].getEmployExtension();
+					employExtension += building[i][x].getExtension();
 					find = true;
 				}
 				x++;
@@ -155,7 +149,7 @@ public abstract class Company{
 			x--;
 			for(int j = 0;j < floor && !find;j++){
 				if(findEmploy(employName,j,x)){
-					employExtension += building[j][x].getEmployExtension();
+					employExtension += building[j][x].getExtension();
 					find = true;
 				}
 				x--;
@@ -164,20 +158,20 @@ public abstract class Company{
 		else if(type == 'o'){
 			for(int i = 0;i < CUBICLES && !find;i++){
 				if(findEmploy(employName,0,i)){
-					employExtension += building[0][i].getEmployExtension();
+					employExtension += building[0][i].getExtension();
 					find = true;
 				}
 				else if(findEmploy(employName,floor-1,i)){
-					employExtension += building[floor-1][i].getEmployExtension();
+					employExtension += building[floor-1][i].getExtension();
 					find = true;
 				}
 				else if(i < floor){
 					if(findEmploy(employName,i,0)){
-						employExtension += building[i][0].getEmployExtension();
+						employExtension += building[i][0].getExtension();
 						find = true;
 					}
 					else if(findEmploy(employName,i,CUBICLES-1)){
-						employExtension += building[i][CUBICLES-1].getEmployExtension();
+						employExtension += building[i][CUBICLES-1].getExtension();
 						find = true;
 					}
 				}
@@ -194,19 +188,19 @@ public abstract class Company{
 				}
 				for(int i = 0;i < CUBICLES;i++){
 					if(findEmploy(employName,0,i)){
-						employExtension += building[0][i].getEmployExtension();
+						employExtension += building[0][i].getExtension();
 						find = true;
 					}
 					else if(findEmploy(employName,floor-1,i)){
-						employExtension += building[floor-1][i].getEmployExtension();
+						employExtension += building[floor-1][i].getExtension();
 						find = true;
 					}
 					else if(findEmploy(employName,i,0)){
-						employExtension += building[i][0].getEmployExtension();
+						employExtension += building[i][0].getExtension();
 						find = true;
 					}
 					else if(findEmploy(employName,up,i)){
-						employExtension += building[up][i].getEmployExtension();
+						employExtension += building[up][i].getExtension();
 						find = true;
 					}
 				}
@@ -229,12 +223,12 @@ public abstract class Company{
 		
 		for(int i = 0;i < limitFloorD;i++){
 			if(findEmploy(employPosition,i,0)){
-						emails.add(building[i][spiral].getEmployEmail()) ;
+						emails.add(building[i][spiral].getEmail()) ;
 			}
 			if(i == floor-1){
 				for(;j < limitCubicleR;j++){
 					if(findEmploy(employPosition,i,j)){
-						emails.add(building[i][j].getEmployEmail());
+						emails.add(building[i][j].getEmail());
 					}
 				}
 			}
@@ -242,7 +236,7 @@ public abstract class Company{
 				j--;
 				for( ;i >= limitFloorU;i--){
 					if(findEmploy(employPosition,i,j)){
-						emails.add(building[i][j].getEmployEmail());
+						emails.add(building[i][j].getEmail());
 					}
 				}
 			}
@@ -250,7 +244,7 @@ public abstract class Company{
 				i++;
 				for( ;j >= limitCubicleL;j--){
 					if(findEmploy(employPosition,i,j)){
-						emails.add(building[i][j].getEmployEmail());
+						emails.add(building[i][j].getEmail());
 					}
 				}
 			}
@@ -269,7 +263,7 @@ public abstract class Company{
 	}
 	public boolean findEmploy(String name, int row, int column){
 		boolean find = false;
-		if(building[row][column].getEmployName().equals(name) || building[row][column].getEmployPosition().equals(name)){
+		if(building[row][column].getName().equals(name) || building[row][column].getPosition().equals(name)){
 					find = true;
 		}
 		return find;

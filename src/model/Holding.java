@@ -12,6 +12,15 @@ import java.util.ArrayList;
 
 public class Holding{
 	
+	//constants
+	
+	public final static String MANUFACTURING = "Manufacturera";
+	public final static String EDUCATION = "Educacion";
+	public final static String TECNOLOGY = "Tecnologia";
+	public final static String DRUG = "Medicamentos";
+	public final static String FOOD = "Alimentos";
+	public final static String PUBLIC_SERVICE = "Servicios publicos";
+	
 	//relations
 	
 	private ArrayList<Company> bussiness;
