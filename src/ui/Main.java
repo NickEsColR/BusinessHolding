@@ -351,7 +351,15 @@ public class Main{
 					System.out.println(holding.searchEmploy(nit,name,typeChar));
 				break;
 				case 9: 
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					System.out.println("escriba el codigo nit de la empresa que desea conocer los emails de los empleados con un cargo especifico");
+					showBussiness();
+					nit = board.nextLine();
+					System.out.println("escriba el cargo de los empleados");
+					name = board.nextLine();
+					ArrayList<String> emails = holding.searchEmployEmail(nit,name);
+					for(int i = 0;i < emails.size();i++){
+						System.out.println(emails.get(i));
+					}
 				break;
 				case 10:
 					System.out.println("**********************************************************************");
