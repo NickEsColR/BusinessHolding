@@ -327,13 +327,28 @@ public class Main{
 				
 				break;
 				case 6:
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					System.out.println("escriba el codigo nit de la empresa de servicio publico que desea conocer su impuesto procultura");
+					showBussiness();
+					nit =  board.nextLine();
+					System.out.println(holding.proCultureIvaPublicService(nit));
 				break;
 				case 7:
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					System.out.println("escriba el codigo nit de la empresa de tecnologia que desea conocer la cantidad de arboles a plantar");
+					showBussiness();
+					nit =  board.nextLine();
+					System.out.println(holding.kilowattsXTree(nit));
 				break;
 				case 8:
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					System.out.println("escriba el codigo nit de la empresa que desea conocer la extension de su empleado");
+					showBussiness();
+					nit = board.nextLine();
+					System.out.println("escriba el nombre del empleado");
+					name = board.nextLine();
+					System.out.println("escriba la letra segun el tipo de busqueda que desea realizar");
+					System.out.println("las letras posibles son: l , z , x , o , e");
+					typeChar = board.next().charAt(0);
+					board.nextLine();
+					System.out.println(holding.searchEmploy(nit,name,typeChar));
 				break;
 				case 9: 
 					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
