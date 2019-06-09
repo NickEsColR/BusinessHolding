@@ -41,4 +41,16 @@ public class Cubicle{
 	public int getExtension(){
 		return extension;
 	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public void setPosition(String position){
+		this.position = position;
+	}
+	
+	public void setEmail(String email){
+		this.email = email;
+	}
 }

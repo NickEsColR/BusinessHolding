@@ -39,6 +39,9 @@ public class Main{
 		date[2] = 1935;
 		Company c = new PublicService("EmCali","2358901","Calle 10 45-32","4597917",3,200000,date,holding.PUBLIC_SERVICE, "Cristian Muslera", 3,3.2,'e', 30,10);
 		holding.addBussiness(c);
+		holding.setCubicleEmploy("Artur","Ejecutivo","artur@correo.emcali.co",0,0,"2358901");
+		holding.setCubicleEmploy("Felicity","Secretaria","felicity@corre.emcali.co",0,19,"2358901");
+		holding.setCubicleEmploy("Camilo","Ingeniero","camilo@corre.emcali.co",0,17,"2358901");
 		date[0] = 13;
 		date[1] = 10;
 		date[2] = 2010;

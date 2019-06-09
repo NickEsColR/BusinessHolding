@@ -217,4 +217,14 @@ public class Holding{
 			}
 		return msg;
 	}
+	
+	public void setCubicleEmploy(String name, String position, String email,int row, int column,String nit){
+		boolean find = false;
+		for(int i = 0;i < bussiness.size() && !find;i++){
+			if(bussiness.get(i).getNit().equals(nit)){
+				find = true;
+				bussiness.get(i).setCubicleEmploy(name,position,email,row,column);
+			}
+		}
+	}
 }

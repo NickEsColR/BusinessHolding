@@ -47,6 +47,15 @@ public abstract class Company{
 		agentName = agent;
 		this.floor = floor;
 		building = new Cubicle[floor][CUBICLES];
+		int i = floor-1;
+		int cont = 1;
+		while(i >= 0){
+			for(int j = 0;j < CUBICLES;j++){
+				building[i][j] = new Cubicle("","","",cont);
+				cont++;
+			}
+			i--;
+		}
 	}
 	
 	public String getName(){
@@ -89,6 +98,9 @@ public abstract class Company{
 		return floor;
 	}
 	
+	public Cubicle[][] getBuilding(){
+		return building;
+	}
 	public String searchEmploy(String employName, char type){
 		String employExtension = "La extension del empleado es: ";
 		boolean find = false;
@@ -274,4 +286,9 @@ public abstract class Company{
 			"que cuenta con un total de "+totalEmploy+" empleados "+"y es una empresa de tipo "+type;
 	}
 	
+	public void setCubicleEmploy(String name, String position, String email,int row, int column){
+		building[row][column].setName(name);
+		building[row][column].setPosition(position);
+		building[row][column].setEmail(email);
+	}
 }
