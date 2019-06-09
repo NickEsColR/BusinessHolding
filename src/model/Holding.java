@@ -54,6 +54,9 @@ public class Holding{
 					find = true;
 				}
 			}
+			if(!find){
+				msg = "No se encontro una empresa con ese nit";
+			}
 		return msg;
 	}
 	
@@ -70,7 +73,10 @@ public class Holding{
 						msg = "La empresa no es de fabricacion";
 					}
 					find = true;
-				}
+			}
+		}
+		if(!find){
+				msg = "No se encontro una empresa con ese nit";
 		}
 		return msg;
 	}
@@ -90,6 +96,9 @@ public class Holding{
 					find = true;
 				}
 		}
+		if(!find){
+				msg = "No se encontro una empresa con ese nit";
+		}
 		return msg;
 	}
 	
@@ -108,6 +117,9 @@ public class Holding{
 					find = true;
 				}
 		}
+		if(!find){
+				msg = "No se encontro una empresa con ese nit";
+			}
 		return msg;
 	}
 	
@@ -120,6 +132,9 @@ public class Holding{
 				find = true;
 			}
 		}
+		if(!find){
+				ext = "No se encontro una empresa con ese nit";
+			}
 		return ext;
 	}
 	
@@ -132,6 +147,7 @@ public class Holding{
 				find = true;
 			}
 		}
+		
 		return email;
 	}
 	
@@ -160,6 +176,9 @@ public class Holding{
 				find = true;
 			}
 		}
+		if(!find){
+				msg = "No se encontro una empresa con ese nit";
+			}
 		return msg;
 	}
 	
@@ -175,6 +194,9 @@ public class Holding{
 				find = true;
 			}
 		}
+		if(!find){
+				msg = "No se encontro una empresa con ese nit";
+			}
 		return msg;
 	}
 	
@@ -190,6 +212,9 @@ public class Holding{
 				find = true;
 			}
 		}
+		if(!find){
+				msg = "No se encontro una empresa con ese nit";
+			}
 		return msg;
 	}
 }

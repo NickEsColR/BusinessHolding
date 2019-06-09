@@ -299,10 +299,32 @@ public class Main{
 					}
 				break;
 				case 4:
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					showBussiness();
 				break;
 				case 5:
-					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
+					System.out.println("escriba el codigo nit de la empresa de servicios que desea hacer la encuesta");
+					showBussiness();
+					nit = board.nextLine();
+					System.out.println("escriba a cuantas personas desea encuestar entre 10 y 50");
+					int encuestas = board.nextInt();
+					board.nextLine();
+					int points = 0;
+					System.out.println("escriba a del 1 al 5 como se siente con el servicio prestado");
+					if(encuestas > 9 && encuestas < 51){
+						for(int i = 0;i < encuestas;i++){
+							System.out.println(holding.quest1Service(nit));
+							points += board.nextInt();
+							System.out.println(holding.quest2Service(nit));
+							points += board.nextInt();
+							System.out.println(holding.quest3Service(nit));
+							points += board.nextInt();
+						}
+						holding.setSatisfactionService(nit,points,encuestas);
+					}
+					else{
+						System.out.println("escriba un numero entre 10 y 50");
+					}
+				
 				break;
 				case 6:
 					System.out.println("escriba el codigo nit de la empresa de educacion que desea conocer el impuesto procultura");
