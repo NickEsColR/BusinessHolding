@@ -41,4 +41,8 @@ public class Product{
 	public int getUnitites(){
 		return unities;
 	}
+	
+	public void plusWater(double plus){
+		water += plus;
+	}
 }
