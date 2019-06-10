@@ -35,6 +35,20 @@ public abstract class Company{
 	
 	//methods
 	
+	/**
+	* <b>Descrpition:</b> constructor of a company<br>
+	* @param name is the company name <br>
+	* @param nit is the unic code of a company<br>
+	* @param address is the company address<br>
+	* @param phone is the company phone<br>
+	* @param employ is how many employs the company have<br>
+	* @param price is the assents price of a company<br>
+	* @param bornDate is the date the company was created<br>
+	* @param type is what the company is<br>
+	* @param agent is the name of the company agent<br>
+	* @param floor is how many floors the company building have<br>
+	*/
+	
 	public Company(String name, String nit, String address, String phone, int employ, 
 	double price, int[] bornDate, String type, String agent, int floor){
 		this.name = name;

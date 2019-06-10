@@ -24,9 +24,19 @@ public class Main{
 	
 	//methods
 	
+	/**
+	* <b>Description:</b> is a constant method you can execute the program<br>
+	* @param args is the arguments the user will introduce<br>
+	*/
+	
 	public final static void main(String[]args){
 		Main m = new Main();
 	}
+	
+	/**
+	* <b>Description:</b> constructor of main<br>
+	* <b>Pos:</b> allow make whatever the program can do<br>
+	*/
 	
 	public Main(){
 		board = new Scanner(System.in);
@@ -373,6 +383,11 @@ public class Main{
 		}
 	}
 	
+	/**
+	* <b>Description:</b> show the options a user can do with the program<br>
+	* <b>Pos:</b> a list of options will show on screen<br>
+	*/
+	
 	public void showMenu(){
 		System.out.println("Escoja la opcion que desea");
 		System.out.println("1. Conocer impuesto procultura de un servicio educativo");
@@ -386,6 +401,11 @@ public class Main{
 		System.out.println("9. Buscar todos los emails de los empleados de una empresa especifica");
 		System.out.println("10. Salir del programa");
 	}
+	
+	/**
+	* <b>Description:</b> show a list of companys the holding have<br>
+	* <b>Pos:</b> a list of the companys will show on the screen<br>
+	*/
 	
 	public void showBussiness(){
 		ArrayList<Company> bussiness = new ArrayList<Company>();
